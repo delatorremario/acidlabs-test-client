@@ -13,6 +13,10 @@ class App extends Component {
 
   componentDidMount() {
     this.socket = io('http://localhost:8000');
+    //this.socket = io('https://boiling-cliffs-84519.herokuapp.com:8000');
+ 
+
+    
     this.socket.on('connect',() => this.setState({ ['error']:{}}));
     this.socket.on('connect_error', () => this.setState({ ['error']: { title: 'API not connected', message: '', show: true } }));
 
